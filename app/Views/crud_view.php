@@ -54,7 +54,7 @@
                                     <td>' . $user["name"] . '</td>
                                     <td>' . $user["email"] . '</td>
                                     <td>' . $user["gender"] . '</td>
-                                    <td></td>
+                                    <td><a href="'.base_url().'/crud/fetch_single_data/'.$user["id"].'" class="btn btn-sm btn-warning">Edit</a></td>
                                     <td></td>
                                 </tr>';
                             }
