@@ -55,7 +55,7 @@
                                     <td>' . $user["email"] . '</td>
                                     <td>' . $user["gender"] . '</td>
                                     <td><a href="'.base_url().'/crud/fetch_single_data/'.$user["id"].'" class="btn btn-sm btn-warning">Edit</a></td>
-                                    <td></td>
+                                    <td><button type="button" onclick="delete_data('.$user["id"].')" class="btn btn-danger btn-sm">Delete</button></td>
                                 </tr>';
                             }
                         }
@@ -103,3 +103,14 @@
         border-color: #007bff;
     }
 </style>
+
+<script>
+function delete_data(id)
+{
+    if(confirm("Are you sure you want to remove it?"))
+    {
+        window.location.href="<?php echo base_url(); ?>/crud/delete/"+id;
+    }
+    return false;
+}
+</script>

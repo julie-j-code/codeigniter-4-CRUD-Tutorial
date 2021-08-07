@@ -96,4 +96,17 @@ class Crud extends BaseController
 			return $this->response->redirect(site_url('/crud'));
 		}
 	}
+
+	function delete($id)
+	{
+		$crudModel = new CrudModel();
+		$crudModel->where('id', $id)->delete($id);
+
+		// Attention !
+		$session = \Config\Services::session();
+
+		$session->setFlashdata('success', 'User Data Deleted');
+
+		return $this->response->redirect(site_url('/crud'));
+	}
 }
